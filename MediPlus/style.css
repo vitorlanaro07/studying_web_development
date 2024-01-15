@@ -82,11 +82,12 @@ nav img{
 .nav_options{
     display: flex;
     flex-direction: row;
+    gap: 0.5vw;
 }
 
-/* .select{
-    border-bottom: 2px solid var(--azul-marinho);
- } */
+.select{
+    border-bottom: 3px solid var(--azul-marinho);
+ }
  
 .nav_options li{
     cursor: pointer;
@@ -120,4 +121,33 @@ nav img{
 
 .pages_option{
     display: none;
+}
+
+.button_nav{
+    cursor: pointer;
+    background-color: var(--azul-marinho);
+    border-radius: 6px;
+    width: 14vw;
+    color: #FFF;
+    border: none;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.button_effect-background{
+    left: 50%;
+    right: 50%;
+    height: 100%;
+    top: 50%;
+    width: 0%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+    background-color: #2C2D3F;
+    z-index: -1;
+}
+
+.button_nav:hover .button_effect-background{
+    width: 100%;
 }
