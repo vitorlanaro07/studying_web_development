@@ -25,7 +25,7 @@ header{
 
 .useful_links{
     font-size: 2em;
-    
+    font-weight: 600;
 }
 
 .useful_links a{
@@ -133,6 +133,7 @@ nav img{
     position: relative;
     z-index: 1;
     overflow: hidden;
+    font-weight: 600;
 }
 
 .button_effect-background{

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card_Opacity</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/4f5308f8c5.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- carrinho de compra com um somador, botao de adicionar redondo (+) -->
+    <header class="header">
+        <h1 class="header__logo">Logo</h1>
+        <span class="header__carrinho" onclick="abreMeuCarrinho()">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </span>
+        <span class="carrinho__contador carrinho__contador--vazio"></span>
+        <div class="carrinho__produtos carrinho__produtos--fechado">
+            <div class="carrinho__informacoes-produto">
+                <img src="" alt="" class="carrinho__produto-imagem">
+                <h1 class="carrinho__produto-nome"></h1>
+            </div>
+            <div class="carrinho__informacoes-qtd">
+                <div class="carrinho__informacoes__quantidade">
+                    <h3 class="informacoes__quantidade__texto">Quantidade: </h3>
+                    <button class="informacores__quantidade__botao" onclick="decrementadorDeProdutos()">-</button>
+                    <input type="text" class="informacoes__quantidade__input" disabled>
+                    <button class="informacores__quantidade__botao" onclick="somadorDeProdutos()">+</button>
+                </div>
+                <div class="carrinho__informacoes__preco">
+                    <h3 class="informacoes__preco__preco"></h3>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="card__produto">
+            <img src="https://static.zattini.com.br/produtos/tenis-adidas-breaknet-feminino/28/NQQ-4379-028/NQQ-4379-028_zoom1.jpg?ts=1661862763&" alt="" class="produto__img">
+            <h2 class="produto__nome">Tenis</h2>
+            <h3 class="produto__preco">R$59.99</h3>
+            <button class="produto__comprar" onclick="adicionaCarrinho(0)">Adicionar</button>
+        </div>
+    </main>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
