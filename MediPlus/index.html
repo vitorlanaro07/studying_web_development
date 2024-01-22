@@ -41,25 +41,34 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             <li class="select">Home</li>
             <li>Doctors</li>
             <li>Services</li>
-            <li class="dropdown">Pages
+            <li class="dropdown" onmouseenter="show_list(this)" onmouseleave="remove_list(this)">Pages
                 <i class="fa-solid fa-chevron-down"></i>
-                <ul class="pages_option">
-                    <li>404 Error</li>
-                </ul>
+                <div class="pages_option" >
+                    <p>404 Error</p>
+                </div>
             </li>
-            <li class="dropdown">Blogs
+            <li class="dropdown" onmouseenter="show_list(this)" onmouseleave="remove_list(this)">Blogs
                 <i class="fa-solid fa-chevron-down"></i>
-                <ul class="pages_option">
-                    <li>Blog Details</li>
-                </ul>
+                <div class="pages_option">
+                    <p>Blog Details</p>
+                </div>
             </li>
             <li>Contact Us</li>
         </ul>
         <button class="button_nav">
             <div class="button_effect-background"></div> Book appointment
-        </button>
-       
+        </button>    
     </nav>
+
+    <section class="slider_show">
+        <div class="container_picture">
+            <img src="images/slider01.jpg" alt="" srcset="" class="slider">
+            <img src="images/slider02.jpg" alt="" srcset="" class="slider">
+            <img src="images/slider03.jpg" alt="" srcset="" class="slider">
+            <i class="fa-solid fa-chevron-left chevron" onclick="plus_divs(-1)"></i>
+            <i class="fa-solid fa-chevron-right chevron" onclick="plus_divs(1)"></i>
+        </div>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>

@@ -26,6 +26,8 @@ header{
 .useful_links{
     font-size: 2em;
     font-weight: 600;
+    display: flex;
+    gap: 1.4em;
 }
 
 .useful_links a{
@@ -61,10 +63,14 @@ header{
 /* Header finish here */
 
 
+/* Start Nav Bar */
+
 nav{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    background: #FFF;
+    align-items: center;
 }
 
 .header_to_nav{
@@ -86,12 +92,12 @@ nav img{
 }
 
 .select{
-    border-bottom: 3px solid var(--azul-marinho);
+    border-bottom: 4px solid var(--azul-marinho);
  }
  
 .nav_options li{
     cursor: pointer;
-    padding: 1em 2em;
+    padding: 1.4em 2em;
     font-weight: 600;
     display: inline-block;
     position: relative;
@@ -121,7 +127,33 @@ nav img{
 
 .pages_option{
     display: none;
+    background-color: #FFF;
 }
+
+.pages_option p{
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0.6em 0.4em;
+}
+
+.pages_option p:hover{
+    color: #2c2d3fb4;
+}
+
+li .dropdown{
+    position: relative;
+}
+
+.showing{
+    position: absolute;
+    display: block;
+    top: 63px;
+    left: 0;
+    width: 15em;
+    border-left: 3px solid var(--azul-marinho);
+    box-shadow: black 1px 1px 2px -1px;
+}
+
 
 .button_nav{
     cursor: pointer;
@@ -134,6 +166,7 @@ nav img{
     z-index: 1;
     overflow: hidden;
     font-weight: 600;
+    height: 3em;
 }
 
 .button_effect-background{
@@ -151,4 +184,45 @@ nav img{
 
 .button_nav:hover .button_effect-background{
     width: 100%;
+}
+
+
+/* END NAV BAR */
+.slider_show{
+    z-index: 99;
+}
+
+.container_picture{
+    height: 600px;
+}
+
+.slider{
+    z-index: -1;
+    top: -45px;
+    position: relative;
+    width: -webkit-fill-available;
+}
+
+.fa-chevron-left{
+    left: 1em;
+}
+
+.fa-chevron-right{
+    right: 1em;
+}
+
+.chevron{
+    position: absolute;
+    top: 50%;
+    background-color: #1A76D1;
+    font-size: 2em;
+    padding: 0.4em;
+    color: #FFF;
+    border-radius: 50%;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.chevron:hover{
+    background-color: var(--cinza-fonte);
 }
