@@ -21,6 +21,7 @@ header{
     flex-direction: row;
     justify-content: space-between;
     padding: 1vw 5vw;
+    flex-wrap: wrap;
 }
 
 .useful_links{
@@ -71,9 +72,22 @@ nav{
     justify-content: space-evenly;
     background: #FFF;
     align-items: center;
-    z-index: 2;
-    position: relative;
+    z-index: 999; 
+    position: sticky;
+    top: 0;
+    animation: nav-mov 0.4s ease-in-out forwards;
+    flex-wrap: wrap;
 }
+
+@keyframes nav-mov{
+    from{
+        opacity: 0;
+    } to {
+        
+        opacity: 1;
+    }
+}
+
 
 .header_to_nav{
     border: 1px solid gray;
@@ -99,7 +113,7 @@ nav img{
  
 .nav_options li{
     cursor: pointer;
-    padding: 1.4em 2em;
+    padding: 1.4vw 2vw;
     font-weight: 600;
     display: inline-block;
     position: relative;
@@ -197,17 +211,17 @@ li .dropdown{
 }
 
 .container_picture{
-    height: 600px;
-    position: absolute;
+    position: relative;
     width: -webkit-fill-available;
+    z-index: 2;
 }
 
 .slider{
     z-index: -1;
-    top: -45px;
     position: relative;
     width: -webkit-fill-available;
-    
+    scale: 1;
+    height: 600px;
 }
 
 
@@ -229,6 +243,7 @@ li .dropdown{
     border-radius: 50%;
     transition: all 0.3s ease-out;
     cursor: pointer;
+    z-index: 2;
 }
 
 .chevron:hover{
@@ -236,11 +251,11 @@ li .dropdown{
 }
 
 .container_slider_text{
-    position: relative;
-    z-index: 99;
-    left: 7em;
-    width: 31vw;
-    top: 10em;
+    position: absolute;
+    z-index: 2;
+    left: 10vw;
+    width: 50vw;
+    top: 10vw;
 }
 
 .slider_text{
@@ -249,9 +264,12 @@ li .dropdown{
     margin-bottom: 1.5vw;
     position: relative;
     top: 0;
+    opacity: 0;
+}
+
+.slider_text--animation{
     animation: move-text 1s forwards;
     animation-delay: 0.3s;
-    opacity: 0;
 }
 
 .slider_text strong{
@@ -265,14 +283,22 @@ li .dropdown{
     margin-bottom: 1vw;
     position: relative;
     top: 0;
+    
+}
+
+.slider_p--animation{
     animation: move-text 1s forwards;
     animation-delay: 0.7s;
+    animation-duration: 1s;
     opacity: 0;
 }
 
 .container_slider_buttons{
     position: relative;
     top: 0;
+}
+
+.slider_buttons--animation{
     animation: move-buttons 1s forwards;
     animation-delay: 1.4s;
     opacity: 0;
@@ -302,4 +328,98 @@ li .dropdown{
 
 .button_effect-background--second{
     background-color: var(--azul-marinho);
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: relative;
+    z-index: 2;
+    top: -10vw;
+    margin: 0 6vw 0px;
+    flex-wrap: wrap;
+    gap:3vw;
+}
+
+.card{
+    background-color: #1A76D1;
+    display: flex;
+    flex-direction: column;
+    width: 22em;
+    padding: 2vw;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.card:hover{
+    box-shadow: var(--cinza-fonte) 0 17px 17px 0px;
+    transform: translateY(-10px);
+}
+
+/* @keyframes move-uṕ{
+    from{
+        top: 15vw;
+    }to {
+        top: 15.4vw;
+    }
+} */
+
+.card_name{
+    font-size: 1em;
+    color: #FFF;
+    margin: 0 0 1em;
+    font-weight: 400;
+}
+
+.card_type, .card_schedule{
+    font-size: 1.3em;
+    color: #FFF;
+    font-weight: 600;
+    margin: 0 0 1.3em;
+}
+
+.card_description{
+    font-size: 1em;
+    color: #FFF;
+    margin: 0 0 1.3em;
+    font-weight: 300;
+}
+
+.card_link{
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.card_schedule{
+    display: flex;
+    flex-direction: row;
+}
+
+.card_days p, .card_hours p{
+    color: #FFF;
+}
+
+.first_section{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+.first_section-title{
+    font-size: 2em;
+    
+}
+
+.first_section-img{
+    margin: 2vw 0;
+    max-width: 100%;
+}
+
+.first_section-text{
+    font-size: 1.1em;
 }
