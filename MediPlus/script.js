@@ -36,6 +36,8 @@ function show_slider(n){
         x[i].style.display = 'none';
         x[slideIndex-1].style.display = 'block';
     }
+
+    setTimeout(show_slider, 3000);
 }
 
 show_slider(slideIndex);

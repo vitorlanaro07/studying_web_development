@@ -71,6 +71,8 @@ nav{
     justify-content: space-evenly;
     background: #FFF;
     align-items: center;
+    z-index: 2;
+    position: relative;
 }
 
 .header_to_nav{
@@ -159,7 +161,7 @@ li .dropdown{
     cursor: pointer;
     background-color: var(--azul-marinho);
     border-radius: 6px;
-    width: 14vw;
+    width: max-content;
     color: #FFF;
     border: none;
     position: relative;
@@ -167,6 +169,7 @@ li .dropdown{
     overflow: hidden;
     font-weight: 600;
     height: 3em;
+    padding: 0 1em;
 }
 
 .button_effect-background{
@@ -189,11 +192,14 @@ li .dropdown{
 
 /* END NAV BAR */
 .slider_show{
-    z-index: 99;
+    z-index: 1;
+    position: relative;
 }
 
 .container_picture{
     height: 600px;
+    position: absolute;
+    width: -webkit-fill-available;
 }
 
 .slider{
@@ -201,7 +207,9 @@ li .dropdown{
     top: -45px;
     position: relative;
     width: -webkit-fill-available;
+    
 }
+
 
 .fa-chevron-left{
     left: 1em;
@@ -225,4 +233,73 @@ li .dropdown{
 
 .chevron:hover{
     background-color: var(--cinza-fonte);
+}
+
+.container_slider_text{
+    position: relative;
+    z-index: 99;
+    left: 7em;
+    width: 31vw;
+    top: 10em;
+}
+
+.slider_text{
+    font-size: 38px;
+    color: var(--cinza-fonte);
+    margin-bottom: 1.5vw;
+    position: relative;
+    top: 0;
+    animation: move-text 1s forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.slider_text strong{
+    color: var(--azul-marinho);
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.slider_p{
+    font-size: 1em;
+    margin-bottom: 1vw;
+    position: relative;
+    top: 0;
+    animation: move-text 1s forwards;
+    animation-delay: 0.7s;
+    opacity: 0;
+}
+
+.container_slider_buttons{
+    position: relative;
+    top: 0;
+    animation: move-buttons 1s forwards;
+    animation-delay: 1.4s;
+    opacity: 0;
+}
+
+@keyframes move-text{
+    from{
+        top: 100px;
+    } to{
+        top:0;
+        opacity: 1;
+    }
+}
+
+@keyframes move-buttons{
+    from{
+        top: -100px;
+    } to{
+        top:0;
+        opacity: 1;
+    }
+}
+
+.button_nav--second{
+    background-color: var(--cinza-fonte);
+}
+
+.button_effect-background--second{
+    background-color: var(--azul-marinho);
 }
