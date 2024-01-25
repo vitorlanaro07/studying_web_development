@@ -14,7 +14,16 @@
     list-style-type: none;
 }
 
+html{
+    box-sizing: border-box;
+}
+
 /* Header start here */
+
+body{
+    max-width: 1920px;
+    margin: 0 auto;
+}
 
 header{
     display: flex;
@@ -73,17 +82,22 @@ nav{
     background: #FFF;
     align-items: center;
     z-index: 999; 
-    position: sticky;
-    top: 0;
-    animation: nav-mov 0.4s ease-in-out forwards;
     flex-wrap: wrap;
+    transition: all 1s ease 0s;
+    
 }
 
-@keyframes nav-mov{
+.nav-sticky{
+    position: sticky;
+    animation: nav-move 0.4s ease forwards;
+}
+
+@keyframes nav-move{
     from{
+        top: -5em;
         opacity: 0;
     } to {
-        
+        top: 0;
         opacity: 1;
     }
 }
@@ -144,6 +158,7 @@ nav img{
 .pages_option{
     display: none;
     background-color: #FFF;
+    position: absolute;
 }
 
 .pages_option p{
@@ -161,10 +176,12 @@ li .dropdown{
 }
 
 .showing{
-    position: absolute;
+    
     display: block;
-    top: 63px;
+    z-index: 3;
     left: 0;
+    bottom: -36px;
+
     width: 15em;
     border-left: 3px solid var(--azul-marinho);
     box-shadow: black 1px 1px 2px -1px;
@@ -336,7 +353,7 @@ li .dropdown{
     justify-content: space-evenly;
     position: relative;
     z-index: 2;
-    top: -10vw;
+    top: -8vw;
     margin: 0 6vw 0px;
     flex-wrap: wrap;
     gap:3vw;

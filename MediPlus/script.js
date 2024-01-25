@@ -11,6 +11,22 @@ function remove_list(element){
 }
 
 
+//nav bar transition
+
+var navbar = document.querySelector("nav");
+
+window.addEventListener("scroll", (event) => {
+    let scroll = Math.round(this.scrollY);
+    if (scroll > 205){
+        navbar.classList.add("nav-sticky");
+    } else{
+        navbar.classList.remove("nav-sticky");
+    }
+})
+
+
+
+// console.log(navbar.scrollTop);
 
 // Slider Show 
 
