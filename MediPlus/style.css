@@ -2,6 +2,7 @@
     --azul-marinho:#1A76D1;
     --cinza-fonte: #2C2D3F;
 }
+
 *{
 
     margin: 0;
@@ -18,12 +19,13 @@ html{
     box-sizing: border-box;
 }
 
-/* Header start here */
 
 body{
-    max-width: 1920px;
+    max-width: 1440px;
     margin: 0 auto;
 }
+
+/* Header start here */
 
 header{
     display: flex;
@@ -222,6 +224,10 @@ li .dropdown{
 
 
 /* END NAV BAR */
+
+
+/* Start Slide Show */
+
 .slider_show{
     z-index: 1;
     position: relative;
@@ -347,6 +353,10 @@ li .dropdown{
     background-color: var(--azul-marinho);
 }
 
+/* End Slide Show */
+
+/* First Section start */
+
 .cards{
     display: flex;
     flex-direction: row;
@@ -363,7 +373,7 @@ li .dropdown{
     background-color: #1A76D1;
     display: flex;
     flex-direction: column;
-    width: 22em;
+    width: 20em;
     padding: 2vw;
     border-radius: 8px;
     position: relative;
@@ -374,14 +384,6 @@ li .dropdown{
     box-shadow: var(--cinza-fonte) 0 17px 17px 0px;
     transform: translateY(-10px);
 }
-
-/* @keyframes move-uṕ{
-    from{
-        top: 15vw;
-    }to {
-        top: 15.4vw;
-    }
-} */
 
 .card_name{
     font-size: 1em;
@@ -404,20 +406,59 @@ li .dropdown{
     font-weight: 300;
 }
 
+.card_link-container{
+    position: relative;
+    width: max-content;
+}
+
 .card_link{
     text-decoration: none;
     font-size: 1em;
     font-weight: bold;
     color: #FFF;
+    box-sizing: border-box;
+}
+
+.card_link::after{
+    content: "";
+    transition: all .3s ease-in-out;
+    background: none repeat scroll #ffffff4b;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    position: absolute;
+
+}
+
+.card_link:hover::after{
+    width: 100%;
 }
 
 .card_schedule{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .card_days p, .card_hours p{
     color: #FFF;
+    font-weight: 300;
+}
+
+
+.card_arrow{
+    color: #FFF;
+    font-size: 1em;
+    margin-left: 0.4em;
+}
+
+.card_icon{
+    position: absolute;
+    bottom: -10px;
+    right: -15px;
+    font-size: 6em;
+    color: #ffffff21;
 }
 
 .first_section{
@@ -425,6 +466,8 @@ li .dropdown{
     flex-direction: column;
     position: relative;
     align-items: center;
+    text-align: center;
+    font-family: 'Poppins';
 }
 
 .first_section-title{
@@ -439,4 +482,69 @@ li .dropdown{
 
 .first_section-text{
     font-size: 1.1em;
+    font-weight: 400;
+    margin-bottom: 3em;
 }
+
+.first_section-services{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3em;
+}
+
+.first_section-cards{
+    display: flex;
+    flex-direction: column;
+    width: 25em;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+
+
+.dots_dots::after{
+    content: ".................";
+    position: absolute;
+    font-size: 3em;
+    right: -2.2em;
+    top: 0.4em;
+    color: var(--azul-marinho);
+}
+
+.first_section-image{
+    border: 1px solid #0000004d;
+    border-radius: 50%;
+    width: 8.5em;
+    height: 8.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.first_section-image i{
+    font-size: 3.5em;
+    color: var(--azul-marinho);
+}
+
+.first_section-subtitle{
+    font-size: 1.6em;
+    margin-bottom: 1.2em;
+}
+
+.first_section-cards:hover .first_section-image{
+    background-color: var(--azul-marinho);
+}
+
+.first_section-cards:hover .first_section-image i{
+    color: #FFF;
+}
+
+.first_section-text{
+    font-weight: 100;
+    width: 85%;
+}
+
+/* First Section end */

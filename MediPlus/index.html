@@ -13,6 +13,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </head>
 <body>
 
+    <!-- /* Header start here */ -->
+
     <header>
         <section class="useful_links">
             <!-- I can use tags like "ul" and "li" to define a list and items-->
@@ -33,6 +35,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         </section>
     </header>
     <hr class="header_to_nav">
+
+
+    <!-- /* Header finish here */ -->
+
+    <!-- /* Start Nav Bar */ -->
+
     <nav>   
         <a href="">
             <img src="images/logo.png" alt="" >
@@ -60,6 +68,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         </button>    
     </nav>
 
+
+    <!-- /* END NAV BAR */ -->
+
+    <!-- /* Start Slide Show */ -->
+
+
     <section class="slider_show">
         <div class="container_picture">
             <img src="images/slider01.jpg" alt="" srcset="" class="slider">
@@ -82,21 +96,31 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         </div>
     </section>
 
+    <!-- /* End Slide Show */ -->
+    <!-- /* First Section start */ -->
     <section class="first_section">
-
         <div class="cards">
             <div class="card">
                 <h4 class="card_name">Lorem Amet</h4>
                 <h3 class="card_type">Emergency Cases</h3>
                 <h3 class="card_description">Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales.</h3>
-                <a href="" class="card_link">LEARN MORE</a>
-                
+                <div class="card_link-container">
+                    <a href="" class="card_link">LEARN MORE
+                        <i class="fa-solid fa-arrow-right-long card_arrow"></i>
+                    </a>
+                </div>
+                <i class="fa-solid fa-truck-medical card_icon"></i>
             </div>
             <div class="card">
                 <h4 class="card_name">Fusce Porttitor</h4>
                 <h3 class="card_type">Doctors Timetable</h3>
                 <h3 class="card_description">Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales.</h3>
-                <a href="" class="card_link">LEARN MORE</a>
+                <div class="card_link-container">
+                    <a href="" class="card_link">LEARN MORE
+                        <i class="fa-solid fa-arrow-right-long card_arrow"></i>
+                    </a>
+                </div>
+                <i class="fa-solid fa-list-check card_icon"></i>
             </div>
             <div class="card">
                 <h4 class="card_name">Donec luctus</h4>
@@ -104,7 +128,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 <div class="card_schedule">
                     <div class="card_days">
                         <p class="week_day">Monday - Friday</p>
-                        <p class="week_day">Saturday9</p>
+                        <p class="week_day">Saturday</p>
                         <p class="week_day">Monday - Thusday</p>
                     </div>
                     <div class="card_hours">
@@ -113,7 +137,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                         <p class="week_hours">9.00-15.00</p>
                     </div>
                 </div>
-                <a href="" class="card_link">LEARN MORE</a>           
+                <div class="card_link-container">
+                    <a href="" class="card_link">LEARN MORE
+                        <i class="fa-solid fa-arrow-right-long card_arrow"></i>
+                    </a>
+                </div>
+                <i class="fa-regular fa-clock card_icon"></i>               
             </div>
         </div>
 
@@ -122,15 +151,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <p class="first_section-text">Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 
         <div class="first_section-services">
-            <div class="first_section-cards">
+            <div class="first_section-cards dots_dots">
                 <div class="first_section-image">
                     <i class="fa-solid fa-truck-medical"></i>
                 </div>
-                <h3 class="first_section-subtitle">Emergency Help
+                <h3 class="first_section-subtitle ">Emergency Help
                 </h3>
                 <p class="first_section-text">Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
             </div>
-            <div class="first_section-cards">
+            <div class="first_section-cards dots_dots">
                 <div class="first_section-image">
                     <i class="fa-solid fa-staff-snake"></i>
                 </div>
@@ -145,8 +174,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 <p class="first_section-text">Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
             </div>
         </div>
-
     </section>
+
+    <!-- /* First Section end */ -->
     <script src="script.js"></script>
 </body>
 </html>
