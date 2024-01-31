@@ -548,3 +548,83 @@ li .dropdown{
 }
 
 /* First Section end */
+
+/* Second Section */
+
+.second_section{
+    background-color: var(--azul-marinho);
+}
+
+.second_section-background{
+    background-image: url(images/fundo_maos.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 120px 0;
+    justify-content: center;
+}
+
+.second_section-background::before{
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--azul-marinho);
+    position: absolute;
+    opacity: 0.7;
+    z-index: 3;
+}
+
+.second_section-divs{
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+    margin: 0 3em;
+}
+
+.second_section-divs i, .second_section-divs p{
+    color: #FFF;
+}
+
+.second_section-divs i{
+    font-size: 2em;
+    border-radius: 50%;
+    border: 1px solid #FFF;
+    padding: 0.6em;
+    transition: all 0.4 ease-in-out;
+    -webkit-transition: all 0.4 ease;
+}
+
+.second_section-divs i:hover{
+    background-color: #FFF;
+    color: var(--azul-marinho);
+    transition: all 0.4 ease;
+    -webkit-transition: all 0.4 ease;
+}
+
+.second_section-divs--datas{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.statistics{
+    font-size: 2.6em;
+    font-weight: 900;
+}
+
+.curiosites{
+    font-size: 1.1em;
+}
+
+
+/* Second Section End */
