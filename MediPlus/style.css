@@ -470,17 +470,17 @@ li .dropdown{
     font-family: 'Poppins';
 }
 
-.first_section-title{
+.sections-title{
     font-size: 2em;
     
 }
 
-.first_section-img{
+.sections-img{
     margin: 2vw 0;
     max-width: 100%;
 }
 
-.first_section-text{
+.sections-text{
     font-size: 1.1em;
     font-weight: 400;
     margin-bottom: 3em;
@@ -628,3 +628,62 @@ li .dropdown{
 
 
 /* Second Section End */
+
+/* Third Section Start */
+
+.third_section{
+    display: flex;
+    flex-direction: column;
+}
+
+.third_section-container--one{
+    text-align: center;
+    padding: 5em 0 0;
+    width: 42em;
+    margin: 0 auto;
+}
+
+.third_section-container--two{
+    display: flex;
+    flex-direction: row;
+}
+
+.third_section i{
+    color: var(--azul-marinho);
+}
+
+.third_section--text{
+    padding: 0 6em;
+    width: 40%;
+}
+
+
+.third_section--title{
+    font-size: 2em;
+    color: #000;
+    font-weight: bolder;
+    padding: ;
+}
+
+.third_section--video{
+    width: 40%;
+    height: max-content;
+}
+
+.third_section--container-video{
+    background-image: url(images/video-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 24em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.third_section--container-video i{
+    
+}
+/* Third Section End */

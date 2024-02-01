@@ -86,48 +86,71 @@ function changing_slider_animation(){
 
 //Second div effect
 
+
 const statistics = document.querySelectorAll('.statistics');
 
-//Here the function timeOut Occur, I need to this way, because It's a Async function!
-function setDelay(element, currentValue, valueMax){
-    setTimeout(function() {
-        element.innerHTML = currentValue;
-        callingNext(element, currentValue, valueMax);
-    }, 10);
-}
 
-//Here I will check the current value and update it, them I will continue calling the timeOut function or finishing
-function callingNext(element, currentValue, valueMax){
-    if (currentValue < valueMax){
-        currentValue += 7;
-        setDelay(element, currentValue, valueMax);
-    }else{
-        element.innerHTML = valueMax;
-        currentValue = 0;
-    }
-}
-
-//Here I'll run in each "element" and update their content, for it I will call two functions!
-function startDisplayCount(){
-    statistics.forEach((element) => {
-        var currentValue = 0;
-        var valueMax = parseInt(element.innerHTML);
-        element.innerHTML = 0;
-        callingNext(element, currentValue, valueMax);
+function delay(ms){
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve, ms);
     })
 }
+
+async function passLoop(statistics, qtd, ms){
+    console.log(statistics, ms);
+    let length = parseInt(statistics.innerHTML);
+    for (let i = 0; i < length; i += qtd){
+        statistics.innerHTML = i;
+        await delay(ms);
+    }
+    statistics.innerHTML = length;
+}
+
+
+
+// //Here the function timeOut Occur, I need to this way, because It's a Async function!
+// function setDelay(element, currentValue, valueMax){
+//     setTimeout(function() {
+//         element.innerHTML = currentValue;
+//         callingNext(element, currentValue, valueMax);
+//     }, 10);
+// }
+
+// //Here I will check the current value and update it, them I will continue calling the timeOut function or finishing
+// function callingNext(element, currentValue, valueMax){
+//     if (currentValue < valueMax){
+//         currentValue += 7;
+//         setDelay(element, currentValue, valueMax);
+//     }else{
+//         element.innerHTML = valueMax;
+//         currentValue = 0;
+//     }
+// }
+
+// //Here I'll run in each "element" and update their content, for it I will call two functions!
+// function startDisplayCount(){
+//     statistics.forEach((element) => {
+//         var currentValue = 0;
+//         var valueMax = parseInt(element.innerHTML);
+//         element.innerHTML = 0;
+//         callingNext(element, currentValue, valueMax);
+//     })
+// }
 
 var trigger = false;
 
 window.onscroll = function (){scrollFcuntion()};
 
-var maxHeightScreen = document.body.scrollHeight;
-const maxPercentage = 100;
+// var maxHeightScreen = document.body.scrollHeight;
+// const maxPercentage = 100;
 // const 
 
 function scrollFcuntion(){
     if (document.documentElement.scrollTop > 643 && trigger == false){
-        startDisplayCount();
+        passLoop(statistics[0], 9, 1);
+        passLoop(statistics[1], 4, 10);
+        passLoop(statistics[2], 12, 1);
+        passLoop(statistics[3], 1, 50);
         trigger = true;
     }
 }
