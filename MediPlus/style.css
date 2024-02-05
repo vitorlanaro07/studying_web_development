@@ -92,6 +92,7 @@ nav{
 .nav-sticky{
     position: sticky;
     animation: nav-move 0.4s ease forwards;
+    box-shadow: #000 1px -8px 20px 0px;
 }
 
 @keyframes nav-move{
@@ -378,6 +379,7 @@ li .dropdown{
     border-radius: 8px;
     position: relative;
     transition: all 0.2s ease;
+    overflow: hidden;
 }
 
 .card:hover{
@@ -468,6 +470,7 @@ li .dropdown{
     align-items: center;
     text-align: center;
     font-family: 'Poppins';
+    margin-bottom: 8em;
 }
 
 .sections-title{
@@ -634,6 +637,7 @@ li .dropdown{
 .third_section{
     display: flex;
     flex-direction: column;
+    margin-bottom: 6em;
 }
 
 .third_section-container--one{
@@ -646,6 +650,7 @@ li .dropdown{
 .third_section-container--two{
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .third_section i{
@@ -653,8 +658,9 @@ li .dropdown{
 }
 
 .third_section--text{
-    padding: 0 6em;
+    /* padding: 0 6em; */
     width: 40%;
+    /* margin: 0 auto; */
 }
 
 
@@ -662,11 +668,39 @@ li .dropdown{
     font-size: 2em;
     color: #000;
     font-weight: bolder;
-    padding: ;
+    margin: 0 0 1em;
+    position: relative;
+}
+
+.third_section--title::after{
+    content: "";
+    position: absolute;
+    width: 64px;
+    height: 3px;
+    background-color: var(--azul-marinho);
+    bottom: -15px;
+    left: 0;
+    z-index: 2;
+}
+
+.third_section--p{
+    margin: 0 0 3em;
+}
+
+.third_section--mini-container{
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+}
+
+.third_section--mini-container div{
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .third_section--video{
-    width: 40%;
+    width: 40em;
     height: max-content;
 }
 
@@ -684,6 +718,164 @@ li .dropdown{
 }
 
 .third_section--container-video i{
-    
+    font-size: 5.5em;
+    z-index: 4;
+    background: #FFF;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
 }
+
+.third_section--container-video i:hover{
+    scale: 1.1;
+}
+
+.container-wave{
+    position: absolute;
+    top: 10.1em;
+    left: 18.2em;
+}
+
+.wave{
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    border-radius: 100%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    z-index: 3;
+    animation: waving 2.5s ease-in-out infinite;
+}
+
+.wave1{
+    animation-delay: 0s;
+}
+
+.wave2{
+    animation-delay: .8s;
+}
+
+.wave3{
+    animation-delay: 1.6s;
+}
+
+@keyframes waving{
+    from{
+        scale: 0;
+        opacity: 1;
+    }
+    to{
+        scale: 3;
+        opacity: .3;
+    }
+}
+
+
 /* Third Section End */
+
+/* <!-- Fourth Section Start --> */
+
+.fourth_section{
+    height: 449px;
+}
+
+.fourth_section-background{
+    background-image: url(images/call-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    height: 449px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fourth_section-background::before{
+    content: "";
+    background-color: var(--azul-marinho);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.fourth_section-container{
+    padding: 4em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    width: 45em;
+    margin: 0 auto;
+    gap: 1.5em;
+}
+
+.fourth_section-title{
+    font-size: 2em;
+    font-weight: 900;
+    color: #FFF;
+}
+
+.fourth_section-p{
+    font-size: 1em;
+    color: #FFF;
+}
+
+.fourth_section-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.fourth_section-button{
+    position: relative;
+    background-color: #FFF;
+    color: var(--azul-marinho);
+    border-radius: 3px;
+    border:1px solid #FFF;
+    width: 10em;
+    height: 4em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.fourth_section-button--effect{
+    position: absolute;
+    background-color: var(--azul-marinho);
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    transform: scale(1) translate(-50%);
+    transition: all 0.4s ease;
+    border-radius: 3px;
+}
+
+.fourth_section-button:hover, .fourth_section-button:hover .card_arrow{
+    color: #FFF;
+    transition: all 0.3s ease;
+}
+
+.fourth_section-button:hover .fourth_section-button--effect{
+    width: 100%;
+    z-index: -1;
+    color: #FFF;
+}
+
+.fourth_section-button i{
+    color: var(--azul-marinho);
+}
+
+/* <!-- Fourth Section End --> */

@@ -106,44 +106,9 @@ async function passLoop(statistics, qtd, ms){
     statistics.innerHTML = length;
 }
 
-
-
-// //Here the function timeOut Occur, I need to this way, because It's a Async function!
-// function setDelay(element, currentValue, valueMax){
-//     setTimeout(function() {
-//         element.innerHTML = currentValue;
-//         callingNext(element, currentValue, valueMax);
-//     }, 10);
-// }
-
-// //Here I will check the current value and update it, them I will continue calling the timeOut function or finishing
-// function callingNext(element, currentValue, valueMax){
-//     if (currentValue < valueMax){
-//         currentValue += 7;
-//         setDelay(element, currentValue, valueMax);
-//     }else{
-//         element.innerHTML = valueMax;
-//         currentValue = 0;
-//     }
-// }
-
-// //Here I'll run in each "element" and update their content, for it I will call two functions!
-// function startDisplayCount(){
-//     statistics.forEach((element) => {
-//         var currentValue = 0;
-//         var valueMax = parseInt(element.innerHTML);
-//         element.innerHTML = 0;
-//         callingNext(element, currentValue, valueMax);
-//     })
-// }
-
 var trigger = false;
 
 window.onscroll = function (){scrollFcuntion()};
-
-// var maxHeightScreen = document.body.scrollHeight;
-// const maxPercentage = 100;
-// const 
 
 function scrollFcuntion(){
     if (document.documentElement.scrollTop > 643 && trigger == false){
@@ -154,6 +119,24 @@ function scrollFcuntion(){
         trigger = true;
     }
 }
+
+
+// Fourth Section
+
+const backgroudMove = document.querySelector('.fourth_section-background');
+
+document.addEventListener('scroll', () => {
+    var limit = backgroudMove.offsetTop + backgroudMove.offsetHeight;
+    var scrollPosition = window.scrollY;
+
+    if (scrollPosition < backgroudMove.offsetTop && scrollPosition <= limit){
+        console.log("yes")
+        backgroudMove.style.backgroundPositionY = (5 * (10*(scrollPosition/limit))) + '%';   
+      }else{
+        // backgroudMove.style.backgroundPositionY = '50%';    
+      }
+    console.log("Scroll Positon: "+ scrollPosition + "Scroll Limit: " + limit + "Imagem position: " +backgroudMove.offsetTop);
+})
 
 
 
