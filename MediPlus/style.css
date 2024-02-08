@@ -486,7 +486,7 @@ li .dropdown{
 .sections-text{
     font-size: 1.1em;
     font-weight: 400;
-    margin-bottom: 3em;
+    margin-bottom: 5em;
 }
 
 .first_section-services{
@@ -955,6 +955,94 @@ li .dropdown{
 
 .fifth_section-card_text{
     font-weight: 100;
+}
+
+.sixth_section{
+    background-color: #f9f9f9;
+    padding: 6em 0;
+    text-align: center;
+}
+
+.sixth_section-container_cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sixth_section-card{
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    padding: 1.5em;
+    margin: 2em;
+    width: 18em;
+}
+
+.sixth_section-card i:first-child{
+    color: var(--azul-marinho);
+    font-size: 4em;
+    margin-bottom: .6em;
+}
+
+.sixth_section-card_title{
+    font-size: 1.5em;
+    font-weight: 900;
+    margin-bottom: 0.5em;
+}
+
+.sixth_section-card_amout{
+    color: var(--azul-marinho);
+    font-size: 2.5em;
+    font-weight: 900;
+    margin-bottom: 1em;
+}
+
+.sixth_section-card_amout span{
+    font-weight: 100;
+}
+
+.sixth_section-card_item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.8em;
+}
+
+.fa-circle-check{
+    color: var(--azul-marinho);
+}
+
+.fa-circle-xmark{
+    color: #AAA;
+}
+
+.sixth_section-button{
+    background-color: var(--azul-marinho);
+    color: #FFF;
+    padding: 0.6em 0em;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    font-weight: 900;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-top: 1.3em;
+}
+
+.sixth_section-button--fill{
+    width: 0;
+    position: absolute;
+    z-index: -1;
+    background-color: var(--cinza-fonte);
+    left: 50%;
+    bottom: 0;
+    top: 0;
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.sixth_section-button:hover .sixth_section-button--fill{
+    width: 100%;
 }
 
 /* <!-- Fourth Section End --> */
