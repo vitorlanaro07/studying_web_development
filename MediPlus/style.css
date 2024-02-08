@@ -777,6 +777,7 @@ li .dropdown{
 
 .fourth_section{
     height: 449px;
+    margin-bottom: 3em;
 }
 
 .fourth_section-background{
@@ -882,6 +883,10 @@ li .dropdown{
     text-align: center;
 }
 
+.fifth_section-carousel{
+    margin-bottom: 4em;
+}
+
 .carousel_drag{
     display: flex;
     flex-direction: row;
@@ -910,6 +915,46 @@ li .dropdown{
 
 .carousel_image:hover::before{
     opacity: 0.5;
+}
+
+.fifth_section-cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6em 0;
+}
+
+.fifth_section-top, .fifth_section-bottom{
+    display: flex;
+    flex-direction: row;
+    gap: 6em;
+}
+
+.fifth_section-card{
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: row;
+}
+
+.fifth_section-card i{
+    color: var(--azul-marinho);
+    font-size: 2.5em;
+}
+
+.fifth_section-card-encaps{
+    text-align: left;
+    margin-left: 1em;
+    width: 17em;
+}
+
+.fifth_section-card_title{
+    font-size: 1.5em;
+    font-weight: 900;
+    margin-bottom: 1em;
+}
+
+.fifth_section-card_text{
+    font-weight: 100;
 }
 
 /* <!-- Fourth Section End --> */
