@@ -2,6 +2,7 @@
 
 
 
+
 var button_pages = document.getElementsByClassName('dropdown');
 
 function show_list(element){
@@ -124,19 +125,89 @@ function scrollFcuntion(){
 // Fourth Section
 
 const backgroudMove = document.querySelector('.fourth_section-background');
+var body = document.querySelector("body");
 
 document.addEventListener('scroll', () => {
-    var limit = backgroudMove.offsetTop + backgroudMove.offsetHeight;
-    var scrollPosition = window.scrollY;
+    
+    //image height
+    var imageHeight = backgroudMove.offsetHeight;
+    
+    //distance image from top
+    var imageFromTop = backgroudMove.offsetTop;
+    
+    //distance image from bottom
+    var imageFromBottom = imageFromTop + backgroudMove.offsetHeight;
+    
+    
+    //position scroll
+    var positionScroll = window.scrollY;
 
-    if (scrollPosition < backgroudMove.offsetTop && scrollPosition <= limit){
-        console.log("yes")
-        backgroudMove.style.backgroundPositionY = (5 * (10*(scrollPosition/limit))) + '%';   
-      }else{
-        // backgroudMove.style.backgroundPositionY = '50%';    
-      }
-    console.log("Scroll Positon: "+ scrollPosition + "Scroll Limit: " + limit + "Imagem position: " +backgroudMove.offsetTop);
+    //size screen
+    var clientScreenHeight = document.documentElement.clientHeight;
+
+    //body height
+    var heightBody = body.offsetHeight + clientScreenHeight - (body.offsetHeight - positionScroll);
+
+    console.log(clientScreenHeight, positionScroll, imageFromBottom, heightBody);
+    //imageFromBottom == 100%
+
+    // console.log(imageFromBottom, heightBody)
+
+    
+    
+    if ((positionScroll + clientScreenHeight) > imageFromTop){
+        var percentageFBot = Math.round(imageFromBottom - positionScroll);
+        var scrollBox = (heightBody - positionScroll);
+        var perc = (scrollBox * percentageFBot);
+        
+        // console.log(percentageFBot, scrollBox);
+        // // console.log((percentage * 100)/ imageFromBottom);
+        // percentage = ((percentage * (46.51)) / 100);
+        // backgroudMove.style.backgroundPositionY = `${percentage}%`;
+
+        
+    } else{
+        
+    }
+   
 })
+
+// Carousel Script
+
+var carouselDrag = document.querySelector('.carousel_drag');
+var pressed = false;
+
+// console.log(event.currentTarget, event.target);
+carouselDrag.addEventListener('mouseenter', () => {
+    carouselDrag.addEventListener('mousedown', () => {
+        pressed = true;
+        console.log("pressed");
+    })
+
+    carouselDrag.addEventListener("mouseup", (event) => {
+        pressed = false;
+        console.log("unpressed");
+    }) 
+    console.log("mouse is inside");
+});
+
+carouselDrag.addEventListener("mousemove", (e) => {
+    if (!pressed) return;
+    e.preventDefault();
+    console.log("moving");
+});
+
+
+carouselDrag.addEventListener('mouseleave', () => {
+    console.log("mouse is outside");
+    console.log(pressed);
+    if(!pressed) { } else {
+        pressed= false;
+    } 
+    
+})
+
+
 
 
 

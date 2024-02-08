@@ -878,4 +878,38 @@ li .dropdown{
     color: var(--azul-marinho);
 }
 
+.fifth_section{
+    text-align: center;
+}
+
+.carousel_drag{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.carousel_image{
+    position: relative;
+}
+
+.carousel_image img{
+    height: 100%;
+    width: 25em;
+}
+
+.carousel_image::before{
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-color: var(--azul-marinho);
+    opacity: 0;
+}
+
+.carousel_image:hover::before{
+    opacity: 0.5;
+}
+
 /* <!-- Fourth Section End --> */
