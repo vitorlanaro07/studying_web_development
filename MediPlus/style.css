@@ -1056,6 +1056,7 @@ li .dropdown{
 
 /* <!-- Sixth Section End --> */
 
+/* <!-- Seventh Section Start --> */
 
 .seventh_section{
     padding: 7em 4em;
@@ -1118,3 +1119,43 @@ li .dropdown{
     font-size: 1.2em;
     margin: 0 0 0.8em;
 }
+
+/* <!-- Seventh Section END --> */
+/* <!-- Eigth Section Start --> */
+
+.eight_section-container{
+    background-image: url(images/client-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.eight_section-container::before{
+    content: "";
+    position: absolute;
+    z-index: 2;
+    background-color: var(--azul-marinho);
+    opacity: 0.8;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.eight_section-carousel{
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    padding: 4em 0;
+    overflow: hidden;
+    z-index: 2;
+    position: relative;
+}
+
+.eight_section-image img{
+    width: 19vw;
+}
+
+/* <!-- Eigth Section End --> */
