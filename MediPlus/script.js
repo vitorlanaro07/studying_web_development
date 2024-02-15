@@ -208,6 +208,36 @@ carouselDrag.addEventListener('mouseleave', () => {
 })
 
 
+// Nineth Form
+
+body.addEventListener("click", () => {
+    
+})
+
+var span = document.querySelectorAll('.form_options');
+var list = document.querySelectorAll(".list");
+
+
+span[0].childNodes[1].innerHTML = list[0].children[0].innerHTML;
+span[1].childNodes[1].innerHTML = list[1].children[0].innerHTML;
+
+// for (let i = 0; i < 4; i++){
+//     if (list[1].children[i].classList.contains("current")){
+//         span[1].childNodes[1].innerHTML = list[1].children[i].innerHTML;
+//     }
+// }
+
+span[0].addEventListener('click', (target) => {
+    console.log(target.target);
+    list[0].classList.toggle("list--showing");
+    span[0].childNodes[1].innerHTML = target.target.innerHTML;
+})
+
+span[1].addEventListener('click', (target) => {
+    list[1].classList.toggle("list--showing");
+    span[1].childNodes[1].innerHTML = target.target.innerHTML;
+})
+
 
 
 
