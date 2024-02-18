@@ -1164,17 +1164,25 @@ li .dropdown{
 /* /* <!-- nineth Section Start --> */
 
 .nineth_section{
-    padding: 4em;
+    padding: 4em 4em 1em;
+}
+
+.nineth_section-container_text{
+    text-align: center;
 }
 
 .nineth_section-container{
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .nineth_section-form{
     display: flex;
     flex-direction: row;
+    width: 100%;
+    gap: 3em;
+    margin-bottom: 2em;
 }
 
 form input, form textarea,.option_current{
@@ -1184,47 +1192,58 @@ form input, form textarea,.option_current{
     font-size: 14px;
     font-weight: 400;
     border-radius: 4px;
-    width: 100px;
+    width: 19vw;
     height: 50px;
 }
 
 form textarea{
     padding: 5px 18px;
-    width: 300px;
+    width: -webkit-fill-available;
     height: 200px;
     resize: none;
+    position: relative;
+    z-index: 0;
 }
 
 .form_column-left{
     display: flex;
     flex-direction: column;
+    width: 50%;
+    gap: 2em;
+    position: relative;
+    z-index: 1;
 }
 
 .form_column-right{
     display: flex;
     flex-direction: column;
+    width: 50%;
+    gap: 2em;
+    position: relative;
+    z-index: 1;
 }
 
 .form_options{
     position: relative;
+    width: 100%;
 }
 
 /* //span */
 .option_current{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
 }
 
 
 .form_options .list{
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     display: none;
     flex-direction: column;
     border: 1px solid #eee;
-    width: 100%;
+    width: inherit;
+    background-color: #FFF;
 }
 
 .list--showing{
@@ -1235,6 +1254,8 @@ form textarea{
 .list .option{
     z-index: 3;
     background-color: rgb(255, 255, 255);
+    padding: 1em;
+    font-weight: bold;
 }
 
 .list .option:hover{
@@ -1242,8 +1263,225 @@ form textarea{
     color: #FFF;
 }
 
+.nineth_section-container_button{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1em;
+}
 
+.nineth_section-button{
+    background-color: var(--azul-marinho);
+    color: #FFF;
+    padding: 1em;
+    position: relative;
+    width: 30%;
+    display: inline-block;
+    font-weight: 900;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-top: 1.3em;
+    text-align: center;
+}
 
-
+.nineth_section-button--fill{
+    width: 0;
+    position: absolute;
+    z-index: -1;
+    background-color: var(--cinza-fonte);
+    left: 50%;
+    bottom: 0;
+    top: 0;
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+.nineth_section-button:hover .nineth_section-button--fill{
+    width: 100%;
+}
 
     /* <!-- nineth Section End --> */ 
+
+
+    /* Newsletter Section Start */
+
+    .container_newsletter{
+        padding: 7em 4em;
+        background-color: #EDF2FF;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 4em;
+    }
+    
+    .signup{
+        width: 30vw;
+    }
+
+    .newsletter_title{
+        font-size: 1.7em;
+        font-weight: bold;
+        color: #2C2D3F;
+    } 
+    
+    .newsletter_p{
+        font-size: 1em;
+        font-weight: 100;
+        color: #757575;
+    }
+
+    .sign_email{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .sign_email input{
+        height: 60px;
+        width: 300px;
+        border: none;
+        color: #333;
+        box-shadow: none;
+        text-shadow: none;
+        border-radius: 5px;
+        padding: 0px 25px;
+        font-weight: 500;
+        font-size: 14px;
+        background: #fff;
+        font-weight: 400;
+    }
+
+    .newsletter-button{
+        background-color: var(--azul-marinho);
+        color: #FFF;
+        position: relative;
+        width: 180px;
+        height: 60px;
+        font-weight: 900;
+        z-index: 2;
+        overflow: hidden;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .newsletter-button--fill{
+        width: 0;
+        position: absolute;
+        z-index: -1;
+        background-color: var(--cinza-fonte);
+        left: 50%;
+        bottom: 0;
+        top: 0;
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+    }
+
+    .newsletter-button:hover .newsletter-button--fill{
+        width: 100%;
+    }
+
+    /* Newsletter Section End */
+
+
+    /* <!-- Footer Section Start --> */
+
+    .footer_information{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2em;
+        background-color: var(--azul-marinho);
+        position: relative;
+       
+    }
+
+    .footer_information::before{
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000;
+        opacity: .1;
+        
+    }
+
+    .footer_information-container{
+        width: 20vw;
+    }
+
+    .footer_title{
+        color: #FFF;
+        font-weight: bold;
+        font-size: 1.7em;
+        position: relative;
+        margin-bottom: 2em;
+    }
+
+    .footer_title::after{
+        content: "";
+        position: absolute;
+        background-color: #fff;
+        height: 3px;
+        bottom: -.4em;
+        left: 0;
+        width: 2.5em;
+        position: absolute;
+    }
+
+    .footer_text{
+        color: #FFF;
+        font-weight: 400;
+        margin-bottom: 1.5em;
+    }
+
+    .footer_social{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .social_link{
+        border: 1px solid #FFF;
+        border-radius: 100%;
+        width: 2.5em;
+        height: 2.5em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .footer_social i{
+        font-size: 16px;
+        color: #FFF;
+    }
+
+
+    .footer_information--links{
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+    }
+
+    .footer_links{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer_links .link{
+        color: #FFF;
+    }
+
+    
+
+    .footer_copyright{
+        background-color: var(--azul-marinho);
+    }
+    /* <!-- Footer Section End --> */

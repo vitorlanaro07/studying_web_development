@@ -210,35 +210,57 @@ carouselDrag.addEventListener('mouseleave', () => {
 
 // Nineth Form
 
-body.addEventListener("click", () => {
-    
-})
-
 var span = document.querySelectorAll('.form_options');
 var list = document.querySelectorAll(".list");
 
+var spanDoctor = span[0].childNodes[1];
+var spanDepartment = span[1].childNodes[1];
 
-span[0].childNodes[1].innerHTML = list[0].children[0].innerHTML;
-span[1].childNodes[1].innerHTML = list[1].children[0].innerHTML;
+var dropBoxDoctor = list[0];
+var dropBoxDepartment = list[1];
 
-// for (let i = 0; i < 4; i++){
-//     if (list[1].children[i].classList.contains("current")){
-//         span[1].childNodes[1].innerHTML = list[1].children[i].innerHTML;
-//     }
-// }
 
-span[0].addEventListener('click', (target) => {
-    console.log(target.target);
-    list[0].classList.toggle("list--showing");
-    span[0].childNodes[1].innerHTML = target.target.innerHTML;
+//setting up span to not be void
+spanDoctor.innerHTML = dropBoxDoctor.children[0].innerHTML;
+spanDepartment.innerHTML = dropBoxDepartment.children[0].innerHTML;
+
+
+function verifyingClick(dropBoxLenght, click, dropBox, span){
+    //maybe this isn't the best way, but works!
+    //verifying if the click is in the options of dropbox or not
+    for(let i=0; i < dropBoxLenght; i++){
+        //first verify if the dropbox is open and if the click is in one of these option
+        if(dropBox.classList.contains("list--showing") && click.target == dropBox.children[i]){
+            span.innerHTML = click.target.innerHTML;
+        }
+    }
+    //anyway it will close the box!
+    dropBox.classList.remove("list--showing");
+}
+
+
+document.addEventListener("click", (click)=> {
+    //verifying if the target is span 
+    if(click.target == spanDoctor){
+        //setting the class to show
+        dropBoxDoctor.classList.add("list--showing");   
+    }else{
+        //if the next click is inside the box select the target or else close the box
+        let dropBoxLenght = dropBoxDoctor.children.length;
+        verifyingClick(dropBoxLenght, click, dropBoxDoctor, spanDoctor)
+    }
+
+    //verifying if the target is span 
+    if(click.target == spanDepartment){
+        //setting the class to show
+        dropBoxDepartment.classList.add("list--showing");
+    }else{
+        //if the next click is inside the box select the target or else close the box
+        let dropBoxLenght = dropBoxDepartment.children.length;
+        verifyingClick(dropBoxLenght, click, dropBoxDepartment, spanDepartment);
+    }
+    
 })
-
-span[1].addEventListener('click', (target) => {
-    list[1].classList.toggle("list--showing");
-    span[1].childNodes[1].innerHTML = target.target.innerHTML;
-})
-
-
 
 
 
