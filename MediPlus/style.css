@@ -1393,11 +1393,10 @@ form textarea{
     .footer_information{
         display: flex;
         flex-direction: row;
-        align-items: center;
-        gap: 2em;
+        justify-content: space-evenly;
         background-color: var(--azul-marinho);
         position: relative;
-       
+        padding: 5em 5em;
     }
 
     .footer_information::before{
@@ -1413,7 +1412,8 @@ form textarea{
     }
 
     .footer_information-container{
-        width: 20vw;
+        width: 18vw;
+        position: relative;
     }
 
     .footer_title{
@@ -1433,6 +1433,7 @@ form textarea{
         left: 0;
         width: 2.5em;
         position: absolute;
+        z-index: 0;
     }
 
     .footer_text{
@@ -1467,21 +1468,88 @@ form textarea{
     .footer_information--links{
         display: flex;
         flex-direction: row;
-        gap: 1em;
+        gap: 3em;
+        transition: all .3s ease-in-out;
     }
 
     .footer_links{
         display: flex;
         flex-direction: column;
+        gap: .7em;
     }
 
     .footer_links .link{
+        color: #FFF;
+        transition: all .3s ease-in-out;
+    }
+
+    .footer_links .link:hover{
+        transform: translateX(15px) scale(1.1);
+    }
+
+    .footer_links .link i{
+        color: #FFF;
+        margin-right: 7px;
+    }
+
+    .footer_information-button_container{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footer_information-button_container input{
+        position: relative;
+        z-index: 1;
+        background-color: var(--azul-marinho);
+        border: 1px solid #FFF;
+        color: #FFF;
+        width: -webkit-fill-available;;
+        height: 3em;
+        padding-left: 1em;
+        border-radius: 5px;
+    }
+
+    .footer_information-button_container input:focus{
+        border: 3px solid #FFF !important;
+        border-radius: 5px;
+        
+        
+    }
+
+   
+    .footer_information-button_container input::placeholder{
         color: #FFF;
     }
 
     
 
+    .footer_information-button_container button{
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        padding: 0em 1.2em;
+        background: #FFF;
+        border: 1px solid #FFF;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .footer_information-button_container i{
+        font-size: 2em;
+        color: var(--azul-marinho);
+    }
+    
+
     .footer_copyright{
         background-color: var(--azul-marinho);
+        text-align: center;
+    }
+
+    .copyright{
+        color: #FFF;
+        padding: 3em 0;
+    } 
     }
     /* <!-- Footer Section End --> */
