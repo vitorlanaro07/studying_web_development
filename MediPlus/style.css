@@ -889,12 +889,18 @@ li .dropdown{
 
 .fifth_section-carousel{
     margin-bottom: 4em;
+    position: relative;
+    height: 300px;
+    width: 100%;
+    max-width: 2900px;
 }
 
 .carousel_drag{
     display: flex;
     flex-direction: row;
     gap: 1em;
+    position: relative;
+    left: 0;
     overflow: hidden;
 }
 
@@ -904,7 +910,7 @@ li .dropdown{
 
 .carousel_image img{
     height: 100%;
-    width: 25em;
+    width: 350px;
 }
 
 .carousel_image::before{

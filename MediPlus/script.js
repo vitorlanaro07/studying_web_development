@@ -2,7 +2,6 @@
 
 
 
-
 var button_pages = document.getElementsByClassName('dropdown');
 
 function show_list(element){
@@ -147,8 +146,6 @@ document.addEventListener('scroll', () => {
 
     //body height
     var heightBody = body.offsetHeight + clientScreenHeight - (body.offsetHeight - positionScroll);
-
-    console.log(clientScreenHeight, positionScroll, imageFromBottom, heightBody);
     //imageFromBottom == 100%
 
     // console.log(imageFromBottom, heightBody)
@@ -174,38 +171,46 @@ document.addEventListener('scroll', () => {
 
 // Carousel Script
 
-var carouselDrag = document.querySelector('.carousel_drag');
-var pressed = false;
+const carouselContainer = document.querySelector('.fifth_section-carousel');
+const innerCarousel = document.querySelector('.carousel_drag');
+const slides = document.querySelectorAll(".carousel_image");
+let pressed = false, startX, startScrollLeft;
 
 // console.log(event.currentTarget, event.target);
-carouselDrag.addEventListener('mouseenter', () => {
-    carouselDrag.addEventListener('mousedown', () => {
+innerCarousel.addEventListener('mouseenter', () => {
+    innerCarousel.style.cursor= "grab !important";
+    innerCarousel.addEventListener('mousedown', (event) => {   
         pressed = true;
-        console.log("pressed");
+        startX = event.pageX
+        startScrollLeft = innerCarousel.scrollLeft;
+        innerCarousel.style.cursor= "grabbing !important";
     })
-
-    carouselDrag.addEventListener("mouseup", (event) => {
+    innerCarousel.addEventListener("mouseup", (event) => {
         pressed = false;
-        console.log("unpressed");
+        
+        innerCarousel.style.cursor= "grab !important";
     }) 
-    console.log("mouse is inside");
 });
 
-carouselDrag.addEventListener("mousemove", (e) => {
-    if (!pressed) return;
-    e.preventDefault();
-    console.log("moving");
+innerCarousel.addEventListener("mousemove", (e) => {
+    if(!pressed){
+        return
+    }else{
+        console.log(startX, startScrollLeft, e.pageX);
+        e.preventDefault();
+        innerCarousel.scrollLeft = startScrollLeft + (startX - e.pageX);
+    }
+    
 });
 
 
-carouselDrag.addEventListener('mouseleave', () => {
-    console.log("mouse is outside");
-    console.log(pressed);
+innerCarousel.addEventListener('mouseleave', () => {
     if(!pressed) { } else {
         pressed= false;
     } 
     
 })
+
 
 
 // Nineth Form
