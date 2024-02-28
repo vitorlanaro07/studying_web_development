@@ -10,6 +10,8 @@ body{
   flex-direction: row;
   align-items: center;
   background: linear-gradient(to left top, blue, red);
+  justify-content: center;
+
 }
 
 .wrapper{
@@ -17,7 +19,7 @@ body{
   flex-direction: row;
   position: relative;
   max-width: 2900px;
-  width: 1050px;
+  width: 100%;
 }
 
 .carousel{
@@ -36,6 +38,7 @@ body{
 .slide{
   position: relative;
   box-sizing: border-box;
+  margin: 0 10px;
 }
 
 .slide img{

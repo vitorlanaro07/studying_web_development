@@ -176,33 +176,44 @@ const innerCarousel = document.querySelector('.carousel_drag');
 const slides = document.querySelectorAll(".carousel_image");
 let pressed = false, startX, startScrollLeft;
 
-// console.log(event.currentTarget, event.target);
+innerCarousel.addEventListener("mousemove", (e) => {
+    if(!pressed){
+        return
+    }else{
+        e.preventDefault();
+        innerCarousel.scrollLeft = startScrollLeft + (startX - e.pageX);
+        console.log(innerCarousel.scrollLeft);
+    }
+    
+});
+
+innerCarousel.addEventListener("scroll", (e) => {
+    
+    if (innerCarousel.scrollLeft === 0){
+        innerCarousel.scrollLeft = (4 * 350) + (4 * 15);
+    } else if (Math.round(innerCarousel.scrollLeft) === innerCarousel.scrollWidth - innerCarousel.offsetWidth){
+        innerCarousel.scrollLeft = (3 * 350) + (3 * 15);
+    }
+});
+
+
 innerCarousel.addEventListener('mouseenter', () => {
+
     innerCarousel.style.cursor= "grab !important";
+
     innerCarousel.addEventListener('mousedown', (event) => {   
         pressed = true;
         startX = event.pageX
         startScrollLeft = innerCarousel.scrollLeft;
         innerCarousel.style.cursor= "grabbing !important";
     })
+
     innerCarousel.addEventListener("mouseup", (event) => {
         pressed = false;
-        
         innerCarousel.style.cursor= "grab !important";
     }) 
-});
 
-innerCarousel.addEventListener("mousemove", (e) => {
-    if(!pressed){
-        return
-    }else{
-        console.log(startX, startScrollLeft, e.pageX);
-        e.preventDefault();
-        innerCarousel.scrollLeft = startScrollLeft + (startX - e.pageX);
-    }
-    
 });
-
 
 innerCarousel.addEventListener('mouseleave', () => {
     if(!pressed) { } else {
@@ -211,6 +222,57 @@ innerCarousel.addEventListener('mouseleave', () => {
     
 })
 
+//eight carousel
+
+
+const wrapper = document.querySelector('.eight_section-carousel');
+let isPressed = false, startXEight, startScrollLeftEight;
+
+wrapper.addEventListener("mousemove", (e) => {
+    if(!isPressed){
+        return
+    }else{
+        e.preventDefault();
+        wrapper.scrollLeft = startScrollLeftEight + (startXEight - e.pageX);
+        console.log(wrapper.scrollLeft);
+    }
+    
+});
+
+wrapper.addEventListener("scroll", (e) => {
+    console.log(wrapper.scrollLeft, wrapper.scrollWidth);
+    if (wrapper.scrollLeft === 0){
+        wrapper.scrollLeft = (6 * 140) + (5 * 30);
+    } else if (Math.round(wrapper.scrollLeft) === wrapper.scrollWidth - wrapper.offsetWidth){
+        wrapper.scrollLeft = (4 * 140) + (4 * 30);
+    }
+});
+
+
+wrapper.addEventListener('mouseenter', () => {
+
+    wrapper.style.cursor= "grab !important";
+
+    wrapper.addEventListener('mousedown', (event) => {   
+        isPressed = true;
+        startXEight = event.pageX
+        startScrollLeftEight = wrapper.scrollLeft;
+        wrapper.style.cursor= "grabbing !important";
+    })
+
+    wrapper.addEventListener("mouseup", (event) => {
+        isPressed = false;
+        wrapper.style.cursor= "grab !important";
+    }) 
+
+});
+
+wrapper.addEventListener('mouseleave', () => {
+    if(!isPressed) { } else {
+        isPressed= false;
+    } 
+    
+})
 
 
 // Nineth Form

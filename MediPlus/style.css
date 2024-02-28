@@ -898,7 +898,7 @@ li .dropdown{
 .carousel_drag{
     display: flex;
     flex-direction: row;
-    gap: 1em;
+    gap: 15px;
     position: relative;
     left: 0;
     overflow: hidden;
@@ -922,10 +922,34 @@ li .dropdown{
     position: absolute;
     background-color: var(--azul-marinho);
     opacity: 0;
+    transition: all .2s ease-in-out;
 }
 
 .carousel_image:hover::before{
     opacity: 0.5;
+    transition: all .2s ease-in-out;
+}
+
+.carousel_image:hover .view-details{
+    display: inline-block;
+}
+
+.carousel_drag .view-details{
+    top: 40%;
+    position: absolute;
+    z-index: 3;
+    left: 31%;
+    display: none;
+    transition: all .2s ease-in-out;
+}
+
+.carousel_drag .fourth_section-button{
+    font-size: 1em !important;
+    font-weight: 900 !important;
+}
+
+.carousel_drag .fourth_section-button--effect{
+    background-color: var(--cinza-fonte) !important;
 }
 
 .fifth_section-cards{
@@ -1136,6 +1160,9 @@ li .dropdown{
     background-size: cover;
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .eight_section-container::before{
@@ -1153,12 +1180,12 @@ li .dropdown{
 .eight_section-carousel{
     flex-direction: row;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5em 0;
+    padding: 5em;
     overflow: hidden;
     z-index: 2;
     position: relative;
+    width: 80vw;
+    gap: 10em;
 }
 
 .eight_section-image img{

@@ -17,8 +17,8 @@ carousel.draggable = false;
 dragging = (event) => {
     if (!isPressed) {return}
     carousel.scrollLeft = startScrollLeft + (startX - event.pageX);
-    console.log(firstCardWidth, carousel.scrollWidth, carousel.scrollLeft, carouselChildren.length*350);
-    // console.log(carousel.offsetWidth, carousel.scrollLeft);
+    // console.log(firstCardWidth, carousel.scrollWidth, carousel.scrollLeft, carouselChildren.length*350);
+    console.log(carousel.scrollLeft, carousel.scrollWidth - carousel.offsetWidth);
 }
 
 mousePressed = (event) => {
@@ -48,16 +48,11 @@ mouseLeave = () => {
 
 infiniteScroll = () => {
   if (carousel.scrollLeft === 0) {
-    // console.log("at begining", (2 * carousel.offsetWidth));
-    // carousel.classList.add("no-animation");
-    carousel.scrollLeft = carousel.scrollWidth - ( 3 * carousel.offsetWidth);
-    // console.log((2 * carousel.offsetWidth));
-    // carousel.classList.remove("no-animation");
+    carousel.scrollLeft = 1490;
+    console.log(carousel.scrollLeft);
   } else if (Math.round(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
-    // console.log("at end",carousel.offsetWidth);
-    
-    carousel.scrollLeft = carousel.offsetWidth - 189;
-    // carousel.classList.remove("no-animation");
+    carousel.scrollLeft = 1160;
+    console.log(carousel.scrollLeft);
   }
 }
 
